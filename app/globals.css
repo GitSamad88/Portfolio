@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #12141f;
+  --color-surface: #1b1e2e;
+  --color-primary: #e8a33d;
+  --color-secondary: #4fb0a5;
+  --color-text: #edeef3;
+  --color-muted: #8b90a6;
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-muted) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.flow-line {
+  stroke-dasharray: 4 8;
+  animation: flow 1.2s linear infinite;
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    r: 4;
+    opacity: 1;
+  }
+  50% {
+    r: 5.5;
+    opacity: 0.6;
+  }
+}
+
+.pulse-node {
+  animation: pulse-node 2.4s ease-in-out infinite;
+}
