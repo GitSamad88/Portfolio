@@ -36,7 +36,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             <NodeGraph />
           </div>
           {content.hero_photo_url && (
-            <div className="absolute h-40 w-40 overflow-hidden rounded-full border-2 border-primary/60 shadow-2xl sm:h-48 sm:w-48">
+            <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-primary/60 shadow-2xl sm:absolute sm:left-1/2 sm:top-1/2 sm:mx-0 sm:h-48 sm:w-48 sm:-translate-x-1/2 sm:-translate-y-1/2">
               <Image
                 src={content.hero_photo_url}
                 alt={content.hero_name}
